@@ -1,15 +1,17 @@
-import React from "react";
+import React from 'react'
 
 function TodoItem({ id, item, onCheck }) {
-    return (
-        <>
-        <li
-            onClick={() => {onCheck(id)}}
-        >
-            {item}  
-        </li>
-        </>
-    )
+  return (
+    <>
+      <li
+        onClick={() => {
+          onCheck(id)
+        }}
+      >
+        {item}
+      </li>
+    </>
+  )
 }
 
-export default TodoItem;
+export default TodoItem

@@ -1,26 +1,14 @@
-import React, { useState } from 'react'
+// Platform specific imports
 import TodoItem from './components/TodoItem'
 import './App.css'
 
+// Cross-Platform imports
+import React from 'react'
+import { useChatApp } from 'shared/hooks'
+
 function App() {
-  const [input, setInput] = useState('')
-  const [items, setItems] = useState([])
-
-  function addItem(event) {
-    setItems((prevData) => {
-      return [...prevData, input]
-    })
-
-    setInput('')
-  }
-
-  function removeItem(id) {
-    setItems((prevData) => {
-      return prevData.filter((item, index) => {
-        return index !== id
-      })
-    })
-  }
+  const chatAppData = useChatApp()
+  const { input, setInput, items, addItem, removeItem } = chatAppData
 
   return (
     <div className="todolist">
